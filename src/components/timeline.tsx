@@ -5,6 +5,7 @@ import { Card } from "./card";
 import RocketRight from "../assets/rocket-right.gif";
 import RocketLeft from "../assets/rocket-left.gif";
 import space from "../assets/space.jpg";
+import { ArrowCircleLeft,ArrowCircleRight } from "phosphor-react";
 
 interface Props {
   items: TimelineItemModel[];
@@ -57,6 +58,11 @@ export function Timeline({ items, icons }: Props) {
   }
 
   return (
+      <>
+        <span className="bg-amber-500 flex flex-1 flex-row rounded w-20 ">
+          <ArrowCircleLeft className="w-8 h-8 mr-3"/>
+          <ArrowCircleRight className="w-8 h-8"/>
+        </span>
     <div
       onKeyUp={handleKeyPress}
       style={{ backgroundImage: `url(${space})` }}
@@ -96,5 +102,7 @@ export function Timeline({ items, icons }: Props) {
 
       {item ? <Card content={item.cardContent} /> : null}
     </div>
+
+      </>
   );
 }

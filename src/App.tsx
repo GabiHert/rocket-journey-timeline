@@ -11,6 +11,7 @@ import planet_7 from "../src/assets/planet-7.png";
 import planet_8 from "../src/assets/planet-8.png";
 import planet_9 from "../src/assets/planet-9.png";
 import planet_10 from "../src/assets/planet-10.png";
+import { X } from "phosphor-react";
 
 function App() {
   const items: TimelineItemModel[] = [
@@ -156,6 +157,7 @@ function App() {
       <header className="mb-10 text-5xl">
         <h1> This is my timeline</h1>
       </header>
+
       <Timeline items={items} icons={icons} />
     </>
   );
