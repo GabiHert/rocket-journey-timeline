@@ -6,6 +6,7 @@ import RocketRight from "../assets/rocket-right.gif";
 import RocketLeft from "../assets/rocket-left.gif";
 import space from "../assets/space.jpg";
 import { ArrowCircleLeft,ArrowCircleRight } from "phosphor-react";
+import stars from "../assets/stars.gif"
 
 interface Props {
   items: TimelineItemModel[];
@@ -15,11 +16,15 @@ interface Props {
 let once = false;
 export function Timeline({ items, icons }: Props) {
   const lastItemsIndex = items.length - 1;
+
   useEffect(() => {
     if (once) return;
     once = true;
     handleOnItemSelected(items[lastItemsIndex]);
   });
+
+
+  const [activeItemIndex,setActiveItemIndex] = useState(lastItemsIndex)
 
   const [item, setItem] = useState<TimelineItemModel | null>(
     items[lastItemsIndex]
@@ -32,7 +37,6 @@ export function Timeline({ items, icons }: Props) {
     const itemSelectedIndex = items.findIndex(
       (element) => element.title === itemSelected.title
     );
-    console.log(itemSelectedIndex);
 
     const modifiedIcons = [...itemsIcons];
     modifiedIcons[itemSelectedIndex] = rocket;
@@ -46,9 +50,11 @@ export function Timeline({ items, icons }: Props) {
     }
 
     setitemsIcons([...modifiedIcons]);
+    setActiveItemIndex(itemSelectedIndex)
   }
 
   function handleKeyPress({ code }) {
+    console.log("handleKeyPress")
     if (code === "ArrowRight") {
       if (rocket !== RocketRight) setRocket(RocketRight);
     }
@@ -57,16 +63,45 @@ export function Timeline({ items, icons }: Props) {
     }
   }
 
+  function handleArrowRightPressed(){
+      console.log("handleArrowRightPressed")
+     if(!(activeItemIndex<lastItemsIndex)) return 
+       setActiveItemIndex(activeItemIndex + 1)
+       console.log(activeItemIndex)
+       handleKeyPress({code:'ArrowRight'})
+
+       const itemSelected = items[activeItemIndex]
+       setItem(itemSelected);
+
+       const itemSelectedIndex = items.findIndex(
+           (element) => element.title === itemSelected.title
+       );
+
+       const modifiedIcons = [...itemsIcons];
+       modifiedIcons[itemSelectedIndex] = rocket;
+
+       if (itemSelectedIndex > 0) {
+         modifiedIcons[itemSelectedIndex - 1] = icons[itemSelectedIndex - 1];
+       }
+
+       if (itemSelectedIndex < icons.length) {
+         modifiedIcons[itemSelectedIndex + 1] = icons[itemSelectedIndex + 1];
+       }
+
+       setitemsIcons([...modifiedIcons]);
+
+
+
+
+  }
+
+
   return (
       <>
-        <span className="bg-amber-500 flex flex-1 flex-row rounded w-20 ">
-          <ArrowCircleLeft className="w-8 h-8 mr-3"/>
-          <ArrowCircleRight className="w-8 h-8"/>
-        </span>
+
     <div
       onKeyUp={handleKeyPress}
-      style={{ backgroundImage: `url(${space})` }}
-      className="flex flex-1 rounded-md flex-col pt-20 items-center mb-5 "
+      className="flex flex-1 rounded-md flex-col p-5 bg-zinc-800 items-center"
     >
       <Chrono
         scrollable={false}
@@ -76,19 +111,18 @@ export function Timeline({ items, icons }: Props) {
           textColor: "",
           titleColor: "",
         }}
-        activeItemIndex={lastItemsIndex}
+        activeItemIndex={activeItemIndex}
         items={items}
         onItemSelected={handleOnItemSelected}
         mode="HORIZONTAL"
-        hideControls={true}
         cardLess={true}
         lineWidth={1}
         timelineCircleDimension={40}
         itemWidth={600}
+
       >
         <div className="chrono-icons">
           {itemsIcons.map((value) => {
-            console.log("Mudando icone");
             return (
               <img
                 key={itemsIcons.indexOf(value)}

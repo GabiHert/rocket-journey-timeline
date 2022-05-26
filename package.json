@@ -15,6 +15,7 @@
     "react-chrono": "^1.15.0",
     "react-dom": "^18.0.0",
     "react-html-parser": "^2.0.2",
+    "react-scroll-motion": "^0.2.6",
     "react-transition-group": "^4.4.2"
   },
   "devDependencies": {

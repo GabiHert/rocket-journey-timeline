@@ -16,7 +16,7 @@ import { X } from "phosphor-react";
 function App() {
   const items: TimelineItemModel[] = [
     {
-      title: "1",
+      title: "2016",
       cardContent: [
         "<h1>",
         "This is my titile",
@@ -28,7 +28,7 @@ function App() {
       ],
     },
     {
-      title: "2",
+      title: "2017",
       cardContent: [
         "<h1>",
         "This is my titile",
@@ -43,7 +43,7 @@ function App() {
       ],
     },
     {
-      title: "3",
+      title: "2018",
       cardContent: [
         "<h1>",
         "This is my titile",
@@ -55,7 +55,7 @@ function App() {
       ],
     },
     {
-      title: "4",
+      title: "2019",
       cardContent: [
         "<h1>",
         "This is my titile",
@@ -67,7 +67,7 @@ function App() {
       ],
     },
     {
-      title: "5",
+      title: "2020",
       cardContent: [
         "<h1>",
         "This is my titile",
@@ -79,7 +79,7 @@ function App() {
       ],
     },
     {
-      title: "6",
+      title: "2021",
       cardContent: [
         "<h1>",
         "This is my titile",
@@ -91,53 +91,17 @@ function App() {
       ],
     },
     {
-      title: "7",
+      title: "2022",
       cardContent: [
         "<h1>",
         "This is my titile",
         "</h1>",
         "<br/>",
-        "<h1>",
+        "<h3>",
         "This is another title",
-        "</h1>",
+        "</h3>",
       ],
-    },
-    {
-      title: "8",
-      cardContent: [
-        "<h1>",
-        "This is my titile",
-        "</h1>",
-        "<br/>",
-        "<h1>",
-        "This is another title",
-        "</h1>",
-      ],
-    },
-    {
-      title: "9",
-      cardContent: [
-        "<h1>",
-        "This is my titile",
-        "</h1>",
-        "<br/>",
-        "<h1>",
-        "This is another title",
-        "</h1>",
-      ],
-    },
-    {
-      title: "10",
-      cardContent: [
-        "<h1>",
-        "This is my titile",
-        "</h1>",
-        "<br/>",
-        "<h1>",
-        "This is another title",
-        "</h1>",
-      ],
-    },
+    }
   ];
   const icons = [
     planet_1,
@@ -153,13 +117,11 @@ function App() {
   ];
 
   return (
-    <>
-      <header className="mb-10 text-5xl">
-        <h1> This is my timeline</h1>
-      </header>
-
-      <Timeline items={items} icons={icons} />
-    </>
+      <>
+        <div className="flex flex-1 flex-col pt-20 m-5">
+          <Timeline items={items} icons={icons} />
+        </div>
+      </>
   );
 }
 
