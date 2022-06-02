@@ -6,5 +6,5 @@ interface Props {
 }
 
 export function Card({ content }: Props) {
-  return <div className="card bg-zinc-400 w-[50%] opacity-80">{ReactHtmlParser(content.join("\n"))}</div>;
+  return <div className="card bg-zinc-400 ml-[25%] w-[50%] opacity-80">{ReactHtmlParser(content.join("\n"))}</div>;
 }

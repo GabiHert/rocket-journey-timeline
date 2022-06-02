@@ -101,7 +101,7 @@ export function Timeline({ items, icons }: Props) {
 
     <div
       onKeyUp={handleKeyPress}
-      className="flex flex-1 rounded-md flex-col p-5 bg-zinc-800 items-center"
+      className="flex flex-1 rounded-md flex-col p-5 pb-20 pt-20 bg-brand-800 items-center"
     >
       <Chrono
         scrollable={false}
@@ -133,10 +133,8 @@ export function Timeline({ items, icons }: Props) {
           })}
         </div>
       </Chrono>
-
-      {item ? <Card content={item.cardContent} /> : null}
     </div>
-
+        {item ? <Card content={item.cardContent} /> : null}
       </>
   );
 }
