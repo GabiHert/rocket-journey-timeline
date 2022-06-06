@@ -12,6 +12,10 @@ module.exports = {
         }
       }
     },
+    fontFamily:{
+      "open-sans-light":["'Open Sans'","sans-serif"],
+      "teko":["Teko","sans-serif"]
+    }
   },
   plugins: [],
 }

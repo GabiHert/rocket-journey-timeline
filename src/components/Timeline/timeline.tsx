@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Chrono } from "react-chrono";
 import { TimelineItemModel } from "react-chrono/dist/models/TimelineItemModel";
 import { Card } from "./card";
-import RocketRight from "../assets/rocket-right.gif";
-import RocketLeft from "../assets/rocket-left.gif";
-import space from "../assets/space.jpg";
+import RocketRight from "../../assets/rocket-right.gif";
+import RocketLeft from "../../assets/rocket-left.gif";
+import space from "../../assets/space.jpg";
 import { ArrowCircleLeft,ArrowCircleRight } from "phosphor-react";
-import stars from "../assets/stars.gif"
+import stars from "../../assets/stars.gif"
 
 interface Props {
   items: TimelineItemModel[];
@@ -118,7 +118,8 @@ export function Timeline({ items, icons }: Props) {
         cardLess={true}
         lineWidth={1}
         timelineCircleDimension={40}
-        itemWidth={600}
+        itemWidth={400}
+        enableOutline={false}
 
       >
         <div className="chrono-icons">

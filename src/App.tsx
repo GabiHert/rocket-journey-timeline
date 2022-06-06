@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Timeline } from "./components/timeline";
+import { Timeline } from "./components/Timeline/timeline";
 import { TimelineItemModel } from "react-chrono/dist/models/TimelineItemModel";
 import planet_1 from "../src/assets/planet-1.png";
 import planet_2 from "../src/assets/planet-2.png";
@@ -49,9 +49,9 @@ function App() {
         "This is my titile",
         "</h1>",
         "<br/>",
-        "<h1>",
+        "<h2>",
         "This is another title",
-        "</h1>",
+        "</h2>",
       ],
     },
     {
@@ -61,9 +61,9 @@ function App() {
         "This is my titile",
         "</h1>",
         "<br/>",
-        "<h1>",
+        "<h2>",
         "This is another title",
-        "</h1>",
+        "</h2>",
       ],
     },
     {
@@ -73,9 +73,9 @@ function App() {
         "This is my titile",
         "</h1>",
         "<br/>",
-        "<h1>",
+        "<h2>",
         "This is another title",
-        "</h1>",
+        "</h2>",
       ],
     },
     {
@@ -85,9 +85,9 @@ function App() {
         "This is my titile",
         "</h1>",
         "<br/>",
-        "<h1>",
+        "<h2>",
         "This is another title",
-        "</h1>",
+        "</h2>",
       ],
     },
     {
@@ -97,9 +97,9 @@ function App() {
         "This is my titile",
         "</h1>",
         "<br/>",
-        "<h3>",
+        "<h2>",
         "This is another title",
-        "</h3>",
+        "</h2>",
       ],
     }
   ];
@@ -118,6 +118,7 @@ function App() {
 
   return (
       <>
+        <h1 className="font-teko" style={{fontSize:"100px"}} >My Rocket Journey</h1>
         <div className="flex flex-1 flex-col pt-20 m-5">
           <Timeline items={items} icons={icons} />
         </div>

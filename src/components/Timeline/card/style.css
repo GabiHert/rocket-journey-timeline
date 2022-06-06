@@ -1,0 +1,19 @@
+.card h1{
+
+    font-weight: bold;
+    font-size: xx-large;
+    font-family: 'Teko', sans-serif;
+}
+
+.card h2{
+    font-weight: normal;
+    font-size:x-large;
+    font-family: 'Teko', sans-serif;
+}
+
+.card{
+    color:azure;
+    margin-top:70px;
+    padding: 10px;
+    border-radius: 10px;
+}
